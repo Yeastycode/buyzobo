@@ -52,24 +52,37 @@ class User extends Authenticatable
      */
     public static function createNew($name, $email, $password, $phone, UserAddress $address)
     {
+        if (!$address->id) {
+            $address->save();
+        }
+
         return new self([
             "name" => $name,
             "password" => $password,
             "phone" => $phone,
-            "address" => $address,
+            "address_id" => $address->id,
             "email" => $email
         ]);
     }
 
     /**
-     * Save the address
+     * User Orders
      *
-     * @param UserAddress $address
      * @return void
      */
-    public function setAddressAttribute(UserAddress $address)
-    {
-        $address->save();
-        $this->address_id = $address->id;
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
+
+    public function address() {
+        return $this->hasOne(UserAddress::class);
+    }
+
+    public function transactions() {
+        return $this->hasManyThrough(Transaction::class, Order::class);
+    }
+
+    public function deliveries() {
+        return $this->hasManyThrough(Delivery::class, Order::class);
     }
 }
