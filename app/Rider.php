@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rider extends Model
 {
-    public function orders()
+    public function deliveries()
     {
-        return $this->hasManyThrough(Order::class, Delivery::class);
+        return $this->hasMany(Delivery::class);
     }
 }
