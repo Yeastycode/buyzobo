@@ -27,4 +27,8 @@ class Order extends Model
             return $carriedCost + $item->getCost();
         }, 0.00);
     }
+
+    public function delivery() {
+        return $this->hasOne(Delivery::class);
+    }
 }
