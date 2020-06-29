@@ -33,20 +33,12 @@
                                         <li><a href="product_details.html"> Product Details</a></li>
                                     </ul>
                                 </li> --}}
-                                <li>
-                                    <a href="blog.html">Blog</a>
+                                {{-- <li><a href="blog.html">Blog</a>
                                     <ul class="submenu">
                                         <li><a href="blog.html">Blog</a></li>
                                         <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
-                                </li>
-
-                                @guest
-                                <li><a href="{{ route('login') }}">Login</a></li>
-                                <li><a href="{{ route('register') }}">Create an Account</a></li>
-                                @else
-                                <li><a href="{{ route('sign-out') }}">Logout</a></li>
-                                @endguest
+                                </li> --}}
 
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
                             </ul>
@@ -55,12 +47,27 @@
                     <!-- Header Right -->
                     <div class="header-right">
                         <ul>
+                            <li class="text"><a href="#">Hi, {{ $user->name }}</a></li>
+
                             <li>
                                 <div class="nav-search search-switch">
                                     <span class="flaticon-search"></span>
                                 </div>
                             </li>
-                            <li><a href="login.html"><span class="flaticon-user"></span></a></li>
+                            <li>
+                                <a href="login.html">
+                                    <span class="flaticon-user"></span>
+                                </a>
+
+                                <ul class="submenu">
+                                    @guest
+                                    <li><a href="{{ route('login') }}">Login</a></li>
+                                    <li><a href="{{ route('register') }}">Create an Account</a></li>
+                                    @else
+                                    <li><a href="{{ route('sign-out') }}">Logout</a></li>
+                                    @endguest
+                                </ul>
+                            </li>
                             {{--
                             @guest
                             <li>Hi</li>

@@ -38,6 +38,6 @@ class ShopController extends Controller
     {
         Auth::logout();
 
-        return redirect()->to('shop');
+        return redirect()->to(route('buy'));
     }
 }
