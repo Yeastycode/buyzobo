@@ -47,7 +47,9 @@
                     <!-- Header Right -->
                     <div class="header-right">
                         <ul>
+                            @if($user)
                             <li class="text"><a href="#">Hi, {{ $user->name }}</a></li>
+                            @endif
 
                             <li>
                                 <div class="nav-search search-switch">
