@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class ShopController extends Controller
 {
     /**
@@ -24,5 +26,18 @@ class ShopController extends Controller
     public function productPreview($id)
     {
         return view('single-product');
+    }
+
+
+    /**
+     * Log out user
+     *
+     * @return void
+     */
+    public function signOut()
+    {
+        Auth::logout();
+
+        return redirect()->to('shop');
     }
 }

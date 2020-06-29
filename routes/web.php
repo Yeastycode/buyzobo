@@ -21,6 +21,7 @@ Route::get('/buy', 'ShopController@index')->name('buy');
 Route::get('/contact-us', 'ShopController@index')->name('contact-us');
 Route::get('/buy/product/{id}/preview', 'ShopController@productPreview');
 Route::get('/cart', 'OrderController@cart');
+Route::get('/sign-out', 'ShopController@signOut')->name('sign-out');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

@@ -25,7 +25,8 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>
                             <ul id="navigation">
-                                <li class="hot"><a href="{{ route('home') }}">Shop</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
+                                <li class="hot"><a href="{{ route('buy') }}">Buy</a></li>
                                 {{-- <li><a href="#">Latest</a>
                                     <ul class="submenu">
                                         <li><a href="shop.html"> Product list</a></li>
@@ -43,7 +44,7 @@
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                 <li><a href="{{ route('register') }}">Create an Account</a></li>
                                 @else
-                                <li><a href="{{ route('logout') }}">Logout</a></li>
+                                <li><a href="{{ route('sign-out') }}">Logout</a></li>
                                 @endguest
 
                                 <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
