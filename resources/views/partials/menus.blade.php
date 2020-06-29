@@ -33,12 +33,13 @@
                                         <li><a href="product_details.html"> Product Details</a></li>
                                     </ul>
                                 </li> --}}
-                                {{-- <li><a href="blog.html">Blog</a>
+                                <li>
+                                    <a href="blog.html">Blog</a>
                                     <ul class="submenu">
                                         <li><a href="blog.html">Blog</a></li>
                                         <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
-                                </li> --}}
+                                </li>
 
                                 @guest
                                 <li><a href="{{ route('login') }}">Login</a></li>
