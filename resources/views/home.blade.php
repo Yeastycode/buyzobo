@@ -17,7 +17,7 @@
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s"
                                         data-duration="2000ms">
-                                        <a href="industries.html" class="btn hero-btn">Buy Now</a>
+                                        <a href="{{ route('buy') }}" class="btn hero-btn">Buy Now</a>
                                     </div>
                                 </div>
                             </div>
