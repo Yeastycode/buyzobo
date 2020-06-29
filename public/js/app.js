@@ -49850,9 +49850,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /private/var/www/buy-zobo/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /private/var/www/buy-zobo/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /private/var/www/buy-zobo/resources/sass/shop/style.scss */"./resources/sass/shop/style.scss");
+__webpack_require__(/*! /var/www/html/buyzobo/website/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /var/www/html/buyzobo/website/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /var/www/html/buyzobo/website/resources/sass/shop/style.scss */"./resources/sass/shop/style.scss");
 
 
 /***/ })
