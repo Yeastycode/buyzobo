@@ -60,12 +60,14 @@
                                 </div>
                             </li>
                             <li><a href="login.html"><span class="flaticon-user"></span></a></li>
+                            {{--
                             @guest
                             <li>Hi</li>
                             @else
-                            {{-- <li><a href="{{ route('logout') }}">Logout</a></li> --}}
-                            {{-- <li><b>{{ $user->name }}</b></li> --}}
+                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                            <li><b>{{ $user->name }}</b></li>
                             @endguest
+                            --}}
                             <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a></li>
                         </ul>
                     </div>
