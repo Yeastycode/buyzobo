@@ -10,7 +10,7 @@
                             <div class="login_part_text_iner">
                                 <h2>New to our Zobo Shop?</h2>
                                 <p>We work hard everyday to give you the best experience.</p>
-                                <a href="#" class="btn_3">Create an Account</a>
+                                <a href="{{ route('register') }}"" class="btn_3">Create an Account</a>
                             </div>
                         </div>
                     </div>
