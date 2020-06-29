@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserAddress extends Model
 {
-    function createNew($houseNumber, $streetName, $city, $state)
+    public static function createNew($houseNumber, $streetName, $city, $state)
     {
         return new self([
             "house_number" => $houseNumber,

@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\UserAddress;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -12,6 +13,10 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        new User::createNew("Popsana Barida", "popsyjunior@gmail.com", "timberland", "08059958585", "No 7 Bailey street, yaba");
+
+        $address = $address = UserAddress::createNew("26", "Baileys Street", "Lagos", "Lagos");
+        $user = User::createNew("Popsana Barida", "popsyjunior@gmail.com", "timberland", "08059958585", $address);
+
+        $user->save();
     }
 }

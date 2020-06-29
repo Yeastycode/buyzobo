@@ -2,9 +2,10 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 /**
  * User
@@ -50,19 +51,16 @@ class User extends Authenticatable
      * @param UserAddress $address
      * @return User
      */
-    public static function createNew($name, $email, $password, $phone, UserAddress $address)
+    public static function createNew($name, $email, $password, $phone, UserAddress $address = null)
     {
-        if (!$address->id) {
-            $address->save();
-        }
-
-        return new self([
+        $user = new self([
             "name" => $name,
-            "password" => $password,
+            "password" => Hash::make($password),
             "phone" => $phone,
-            "address_id" => $address->id,
             "email" => $email
         ]);
+
+        return $user->setAddress($address);
     }
 
     /**
@@ -70,19 +68,38 @@ class User extends Authenticatable
      *
      * @return void
      */
-    public function orders() {
+    public function orders()
+    {
         return $this->hasMany(Order::class);
     }
 
-    public function address() {
+    public function address()
+    {
         return $this->hasOne(UserAddress::class);
     }
 
-    public function transactions() {
+    public function transactions()
+    {
         return $this->hasManyThrough(Transaction::class, Order::class);
     }
 
-    public function deliveries() {
+    public function deliveries()
+    {
         return $this->hasManyThrough(Delivery::class, Order::class);
+    }
+
+    public function setAddress(UserAddress $address = null)
+    {
+        if (!$address) {
+            return;
+        }
+
+        if ($address && !isset($address->id)) {
+            $address->save();
+        }
+
+        $this->address_id = $address->id;
+
+        return $this;
     }
 }
