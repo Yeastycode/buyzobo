@@ -19,3 +19,11 @@ Route::get('/checkout', 'OrderController@checkout');
 Route::get('/buy', 'ShopController@index');
 Route::get('/buy/product/{id}/preview', 'ShopController@productPreview');
 Route::get('/cart', 'OrderController@cart');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
