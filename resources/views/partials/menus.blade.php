@@ -54,7 +54,7 @@
                             <li>
                                 <div class="nav-search search-switch">
                                     <span class="flaticon-search"></span>
-                                </div>
+                                </div> 
                             </li>
                             <li>
                                 <a href="login.html">
