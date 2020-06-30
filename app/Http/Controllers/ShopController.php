@@ -25,6 +25,7 @@ class ShopController extends Controller
      */
     public function productPreview($id)
     {
+        // just testing..
         return view('single-product');
     }
 
